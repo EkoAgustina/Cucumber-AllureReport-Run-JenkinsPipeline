@@ -20,3 +20,41 @@
 * ## Add script Allure Report in pipeline script
 
 <img width="444" alt="Screenshot_4" src="https://user-images.githubusercontent.com/98994988/173223719-6d0f567d-6b5e-426c-9bc7-db567a4f698a.png">
+
+* ## Here is an example of the full script
+```
+def project = "Cucumber and generate Allure Report"
+
+pipeline {
+    agent any
+
+    options{
+        timestamps()
+    }
+
+    stages{
+
+        stage('Build') {
+            steps {
+                 echo 'Hi, Start testing'
+                   }
+            }
+        stage("Execute Test"){
+            steps{
+                git 'https://github.com/EkoAgustina/Cucumber-AllureReport-Run-JenkinsPipeline.git'
+            script{
+                bat(/mvn clean test/)
+             }
+                }
+        }
+
+         stage('Generate Report'){
+                steps {
+                    allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
+              }
+            }
+    }
+
+
+}
+```
