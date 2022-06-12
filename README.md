@@ -1,4 +1,4 @@
-# Run Cucumber and Generate Allure Report in Jenkins pipeline
+# Run Cucumber with Selenium and Generate Allure Report in Jenkins pipeline
 
 
 * ## Create your pipeline
