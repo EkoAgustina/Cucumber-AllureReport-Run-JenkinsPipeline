@@ -14,7 +14,8 @@
 
 
 * ## Generate pipeline script for Allure Report
-![screencapture-localhost-8080-job-sele-pipeline-syntax-2022-06-12-12_41_45](https://user-images.githubusercontent.com/98994988/173222600-52f6d69d-7f3b-4d07-9e3f-c9c5c539ff29.png)
+![screencapture-localhost-8080-job-Selenium-Cucumber-AllureReport-RunPipeline-pipeline-syntax-2022-06-12-15_23_43](https://user-images.githubusercontent.com/98994988/173224278-ee2be4ff-e44b-4864-9a54-5c9a681bd92c.png)
+
 
 
 * ## Add script Allure Report in pipeline script
@@ -58,3 +59,12 @@ pipeline {
 
 }
 ```
+* ## And Build Now
+<img width="939" alt="Screenshot_5" src="https://user-images.githubusercontent.com/98994988/173224423-88323002-2c0b-466b-a763-1544beaf22b8.png">
+
+
+* ## Here are the results
+![screencapture-localhost-8080-job-Selenium-Cucumber-AllureReport-RunPipeline-2022-06-12-15_31_34](https://user-images.githubusercontent.com/98994988/173224600-54a2dd89-66f5-41c1-94e3-c937c6e34127.png)
+
+![screencapture-localhost-8080-job-Selenium-Cucumber-AllureReport-RunPipeline-allure-2022-06-12-15_32_58](https://user-images.githubusercontent.com/98994988/173224658-e0defd59-fa8e-4022-854a-240524fa75df.png)
+
