@@ -12,6 +12,7 @@ pipeline {
                     echo "M2_HOME = ${M2_HOME}"
                 ''' 
             }
+          
         }
 
         stage ('Build') {
@@ -19,5 +20,11 @@ pipeline {
                 echo 'This is a minimal pipeline.'
             }
         }
+        stage("Execute Test"){
+         
+            script{
+                bat(/mvn clean test/)
+                }
     }
+    
 }
