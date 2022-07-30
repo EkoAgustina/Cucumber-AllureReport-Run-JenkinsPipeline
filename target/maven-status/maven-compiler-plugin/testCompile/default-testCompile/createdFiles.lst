@@ -1,7 +1,10 @@
 Login\loginValidAkun.class
+yourCart\verifyCart.class
 yourCart\addProduct.class
 yourCart\cart.class
 stepDefinitions\stepDefinition.class
 Utils\chromeBrowser.class
 Utils\fUtils.class
+test.class
+Utils\TKScreenshoot.class
 CucumberRunner\TestRunner.class

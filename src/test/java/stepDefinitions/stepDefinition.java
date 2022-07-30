@@ -6,14 +6,23 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.lv.Tad;
 import io.cucumber.testng.CucumberOptions;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
 import yourCart.addProduct;
 import yourCart.cart;
+import yourCart.verifyCart;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 import static Utils.chromeBrowser.driver;
+import static Utils.chromeBrowser.wait;
+
 
 public class stepDefinition {
 
@@ -52,7 +61,17 @@ public class stepDefinition {
 
     @Then(": System displays the product page")
     public void systemDisplaysTheProductPage() {
-        driver.getCurrentUrl();
+        String ExpctUrlHomepage     = "https://www.saucedemo.com/inventory.html";
+        String ActualUrlHomepage    = driver.getCurrentUrl();
+
+        try {
+            Assert.assertEquals(ActualUrlHomepage, ExpctUrlHomepage);
+        } catch (AssertionError e){
+            System.out.println("Not Equal");
+
+            throw e;
+        }
+        System.out.println("Equal");
     }
 
     @And(": Add to cart products")
@@ -62,6 +81,7 @@ public class stepDefinition {
 
         AddProduct.addProduct1().click();
         AddProduct.addProduct2().click();
+
 
     }
 
@@ -73,6 +93,31 @@ public class stepDefinition {
         ClickCart.CickicnCart().click();
 
     }
+
+    @And(": Successfully added product to cart")
+    public void Successfully_added_product_to_cart() {
+
+
+        String ExpctUrlHomepage     = "https://www.saucedemo.com/cart.html";
+        String ActualUrlHomepage    = driver.getCurrentUrl();
+
+        try {
+            Assert.assertEquals(ActualUrlHomepage, ExpctUrlHomepage);
+        } catch (AssertionError e){
+            System.out.println("Not Equal");
+
+            throw e;
+        }
+        System.out.println("Equal");
+
+        verifyCart VerifCart = new verifyCart(driver);
+        VerifCart.VerifButtonCheckout();
+    }
+
+
+
+
+
 }
 
 

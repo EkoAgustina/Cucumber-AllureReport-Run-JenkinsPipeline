@@ -5,3 +5,4 @@ Feature: Your Cart
     And : Click login
     And : Add to cart products
     And : Click the cart icon
+    And : Successfully added product to cart
